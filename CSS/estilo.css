@@ -1,0 +1,1240 @@
+/***********INDICE*************/
+
+/*
+1.RESET
+2. Estilo General
+3.
+4.
+
+
+******************************/
+
+/****RESET****/
+@font-face{
+    font-family: titular;
+    src: url(../PierSans/PierSans-Bold.otf);   
+}
+
+@font-face{
+    font-family: text;
+    src: url(../PierSans/PierSans-Regular.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul{
+    list-style: none;
+}
+
+/****Estilo General****/
+
+body{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+    width: 0px;
+    /*edge chrome safari*/
+}
+
+body{
+    -ms-overflow-style: none;
+    /*internet explorer*/
+}
+
+html{
+    scrollbar-width: none;
+    /*firefox dar al html*/
+}
+
+/********************/
+/*******MENUS********/
+
+#desplegable{
+    right: 50vw;
+    top: 50vh;
+    height: 0;
+    width: 0;
+    background-color: white;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    transition: all 1s;
+    transform: rotate(-45deg);
+    font-family: 'Lato';
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+#desplegable h2{
+    cursor: pointer;
+    font-size: 4rem;
+}
+
+#desplegable h2:hover{
+    color: #009CDD;
+}
+
+
+#desplegable.abrirmenu{
+    opacity: 1;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    transform: rotate(0deg);
+}
+
+#menu #boton{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+    align-items: center;
+    cursor: pointer;
+    transform: rotate(45deg);
+    z-index: 2;
+    border-left: 5px solid #009CDD;
+    border-right: 5px solid #009CDD;
+    transition: all 1s;
+}
+
+#menu #boton:hover{
+    transform: rotate(0deg) scale(1.2);
+    background-color: white;
+    transition: all 1s;
+}
+
+#menu #boton:hover p{
+    transform: rotate(0deg);
+    color:#009CDD;
+    transition: all 1s;
+}
+
+#menu #boton>p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 0.8rem;
+    color: #009CDD;
+    font-family: 'Lato';
+    transform: rotate(-45deg);
+    opacity: 1;
+    background-color: transparent;
+    transition: all 1s;
+}
+
+#menu #boton.boton2 p{
+    opacity: 0;
+}
+
+#menu #boton>hr{
+    height: 5px;
+    width: 100%;
+    background-color: #009CDD;
+    border: none;
+    transition: all 2s;
+}
+
+#menu #boton.boton2{
+    height: 50px;
+    width: 50px;
+    display: block;
+    transform: rotate(90deg);
+    top: 15px;
+    left: calc(100% - 65px);
+    transition: all 1.5s;
+    background-color: transparent;
+    border: none;
+}
+
+#menu #boton.boton2:hover hr{
+    background-color: black;
+}
+
+#menu #boton.boton2 hr:nth-of-type(1){
+    transform: rotate(45deg);
+    margin-top: 23px;
+}
+
+#menu #boton.boton2 hr:nth-of-type(2){
+    transform: rotate(-45deg);
+    margin-top: -21px;
+}
+
+
+/********************/
+/*******MENUS********/
+
+
+#hero{
+    height: 100vh;
+    width: 100%;
+    background-color: #009CDD;
+    background-image: url(../imagenes/fondohero.png);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    transition: height 1s;
+}
+
+#hero.cerrar{
+    height: 0;
+    width: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+#hero article{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, 5%);
+    grid-template-rows: repeat(20, 5%);
+}
+
+#hero>article>div:nth-of-type(2){
+   background-position: center center;
+   background-size: contain;
+   background-repeat: no-repeat;
+   grid-area: 3 / 3 / 19 / 19;
+   height: 100%;
+   width: 100%;
+   animation-name: carpas;
+   animation-duration: 30s;
+   animation-iteration-count: 1;
+}
+
+@keyframes carpas{
+    0%{
+        background-image: url(../imagenes/carpas/carpas2.png);
+    }
+    2.5%{
+        background-image: url(../imagenes/carpas/carpas1.png);
+    }5%{
+        background-image: url(../imagenes/carpas/carpas2.png);
+    }7.5%{
+        background-image: url(../imagenes/carpas/carpas1.png);
+    }10%{
+        background-image: url(../imagenes/carpas/carpas2.png);
+    }12.5%{
+        background-image: url(../imagenes/carpas/carpas1.png);
+    }15%{
+        background-image: url(../imagenes/carpas/carpas2.png);
+    }17.5%{
+        background-image: url(../imagenes/carpas/carpas1.png);
+    }21%{
+        background-image: url(../imagenes/carpas/carpas2.png);
+        opacity: 1;
+    }22%{
+        background-image: url(../imagenes/carpas/carpas1.png);
+        opacity: 0;
+    }24%{
+        background-image: url(../imagenes/carpas/carpas2.png);
+        opacity: 0;
+    }25%{
+        transform: rotate(-360deg);
+    }100%{
+        opacity: 0;
+    }
+}
+
+#hero>article>div:nth-of-type(3){
+    grid-area: 3 / 3 / 19 / 19;
+    opacity: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    animation-name: redondas;
+    animation-iteration-count: 1;
+    animation-duration: 30s;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+@keyframes redondas{
+    17%{
+        opacity: 0;
+    }18%{
+        opacity: 1;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }19%{
+        grid-area: 1 / 1 / 21 / 21;
+        height: 100%;
+        width: 100%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+    }20%{
+
+    }22%{
+        transform: rotate(0deg);
+    }50%{
+        transform: rotate(-270deg);
+        opacity: 1;
+    }51%{
+        opacity: 0;
+    }100%{
+        padding-top: 0%;
+        padding-bottom: 0%;
+        grid-area: 1 / 1 / 21 / 21;
+    }
+}
+
+#hero>article>div:nth-of-type(3)>div{
+    animation-name: redondastamaño;
+    animation-iteration-count: 1;
+    animation-duration: 30s;
+}
+
+@keyframes redondastamaño{
+    17%{
+        opacity: 0;
+    }18%{
+        opacity: 1;
+    }19%{
+        height: 30%;
+    }22%{
+        height: 50%;
+    }23%{
+        height: 30%;
+        transform: rotate(0deg);
+    }50%{
+        transform: rotate(-270deg);
+        opacity: 1;
+    }51%{
+        opacity: 0;
+    }100%{
+        height: 30%;
+    }
+
+}
+
+#hero>article>div:nth-of-type(3)>div:nth-of-type(1){
+    background-image: url(../imagenes/carpas/redonda_Mesa\ de\ trabajo\ 1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 30%;
+}
+
+#hero>article>div:nth-of-type(3)>div:nth-of-type(2){
+    background-image: url(../imagenes/carpas/redonda_Mesa\ de\ trabajo\ 1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: 30%;
+}
+
+#hero h1{
+    transform: translatex(-50%);
+    opacity: 1;
+    z-index: 10;
+    font-family: 'Lato';
+    font-size: 300%;
+    color: white;
+    z-index: 3;
+    grid-area: 10 / 12 / 12 / 16;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: ao;
+    animation-duration: 30s;
+    animation-iteration-count: 1;
+}
+
+@keyframes ao{
+    0%{
+        transform: translatex(0%);
+        opacity: 0;
+    }
+    49%{
+        opacity: 0;
+        transform: translatex(0%);
+    }50%{
+        opacity: 1;
+    }51%{
+        transform: translatex(-50%);
+    }100%{
+        transform: translatex(-50%);
+        opacity: 1;
+    }
+}
+
+#hero h2{
+    transform: translatex(60%);
+    opacity: 1;
+    z-index: 10;
+    font-family: 'Lato';
+    font-size: 150%;
+    color: white;
+    z-index: 3;
+    grid-area: 10 / 6 / 12 / 10;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: project;
+    animation-duration: 30s;
+    animation-iteration-count: 1;
+}
+
+@keyframes project{
+    0%{
+        transform: translatex(0%);
+        opacity: 0;
+    }
+    49%{
+        opacity: 0;
+        transform: translatex(0%);
+    }50%{
+        opacity: 1;
+    }51%{
+        transform: translatex(60%);
+    }100%{
+        transform: translatex(60%);
+        opacity: 1;
+    }
+}
+
+p{
+    font-family: 'roboto';
+}
+
+#hero article>div:nth-of-type(1){
+    grid-area: 16 / 10 / 20 / 12;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: all 2s;
+    background-color: transparent;
+    z-index: 1;
+    transform: scale(0%);
+    animation-name: flecha;
+    animation-duration: 30s;
+    animation-iteration-count: 1;
+    transform: scale(100%);
+}
+
+@keyframes flecha{
+    0%{
+        transform: scale(0%);
+    }
+    60%{
+        transform: scale(0%);
+    }
+    61%{
+        transform: scale(100%);
+    }100%{
+        transform: scale(100%);
+    }
+}
+
+#hero article>div:nth-of-type(1)>div{
+    background-color: transparent;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: all 2s;
+    cursor: pointer;
+    animation-name: scrollhero;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;  
+    z-index: 1;
+}
+
+@keyframes scrollhero{
+    0%{
+        
+    }50%{
+        transform: rotateY(360deg) translateY(20px);
+    }100%{
+        
+    }
+}
+
+@keyframes scrollhero2{
+    0%{
+        
+    }50%{
+        transform: rotateY(360deg) rotateX(360deg);
+    }100%{
+        
+    }
+}
+
+#hero article>div:nth-of-type(1)>div>div{
+    height: 30px;
+    width: 30px;
+    transform: rotate(45deg);
+    background-color: transparent;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 2s;
+}
+
+#hero article>div:nth-of-type(1)>div>div>div{
+    height: 15px;
+    width: 15px;
+    background-color: rgba(47, 157, 161, 0.1);
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    transition: all 2s;
+    animation-name: scrollhero2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;  
+}
+
+.menunavegador{
+    top: calc(-100vh + 45px);
+    height: 100%;
+    min-width: 45px;
+    position: fixed;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    transition: top 2s;
+    background-color: #009CDD;
+    z-index: 1000;
+}
+
+.menunavegador.abrir{
+    top: 0vh;
+}
+
+.menunavegador article{
+    width: 100%;
+    min-height: 45px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    cursor: pointer;
+}
+
+.menunavegador div{
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menunavegador article p{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #009CDD;
+    font-family: 'Lato';
+    transition: all 2s;
+}
+
+.menunavegador article p.abrir{
+    opacity: 0;
+    height: 0;
+}
+
+.menunavegador article div{
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.menunavegador article>hr{
+    height: 5px;
+    width: 100%;
+    background-color: #009CDD;
+    border: none;
+    position: absolute;
+    transition: all 2s;
+}
+
+.menunavegador article:hover>hr.abrir{
+    background-color: black;
+    cursor: pointer;
+}
+
+.menunavegador article>hr:nth-of-type(1){
+    top: 0;
+}
+
+.menunavegador article>hr:nth-of-type(2){
+    bottom: 0;
+}
+
+.menunavegador article>hr:nth-of-type(1).abrir{
+    transform: rotate(45deg);
+    top: 20px;
+    width: 50%;
+}
+
+.menunavegador article>hr:nth-of-type(2).abrir{
+    transform: rotate(-45deg);
+    bottom: 20px;
+    width: 50%;
+}
+
+.menunavegador div div{
+    height: 5%;
+    width: 100%;
+    cursor: pointer;
+    transition: all 1s;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.menunavegador div div:nth-of-type(1) p{
+    font-family: 'Lato';
+    font-size: medium;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menunavegador div div:nth-of-type(2){
+    background-image: url(../imagenes/iconosMenu/dau.png);
+}
+
+.menunavegador div div:nth-of-type(3){
+    background-image: url(../imagenes/iconosMenu/cipo.png);
+}
+
+.menunavegador div div:nth-of-type(4){
+    background-image: url(../imagenes/iconosMenu/letteringSandra.png);
+}
+
+.menunavegador div div:nth-of-type(5){
+    background-image: url(../imagenes/iconosMenu/fiestamayor.png);
+}
+.menunavegador div div:nth-of-type(7){
+    background-image: url(../imagenes/iconosMenu/beatDiana.png);
+}
+
+.menunavegador div div:hover{
+    background-color: brown;
+}
+
+.informacion p{
+    font-family: 'Lato';
+    font-size: large;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacion{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+}
+
+.informacion>div:nth-of-type(1)>p:nth-of-type(1){
+    font-family: 'Lato';
+    font-size: small;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.informacion>div:nth-of-type(1)>p:nth-of-type(2){
+    font-family: 'Lato';
+    font-size: small;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.informacion>div:nth-of-type(1){
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.informacion>div:nth-of-type(2){
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50px;
+    height: 65px;
+}
+
+.informacion>div:nth-of-type(3){
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.informacion>div:nth-of-type(2)>p:nth-of-type(1){
+
+}
+
+.informacion>div:nth-of-type(2)>hr{
+    width: 80%;
+    height: 3px;
+    background-color: white;
+    border: none;
+    animation-name: fluid;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fluid{
+    70%{
+        width: 80%;
+    }85%{
+        width: 40%;
+    }
+}
+
+.informacion>div:nth-of-type(2)>p:nth-of-type(2){
+
+}
+
+
+
+
+
+
+/************MENU***************/
+/***********************************/
+/****************************************/
+
+
+
+
+
+
+
+#menu{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+#menu article{
+    height: 50%;
+    width: 25%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#menu article div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: column;
+    padding: 5%;
+}
+
+#menu article:nth-of-type(7)>div{
+    background-image: url(../imagenes/beathunterz/beathunterzwhitesmall.png);
+    background-size: 70%;
+    background-color: rgb(9, 97, 148);
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 2s;
+    animation-name: beathunter;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+}
+
+@keyframes beathunter{
+    20%{
+        background-image: url(../imagenes/beathunterz/beathunterzblacksmall.png);
+        background-color: rgb(9, 97, 148);
+    }40%{
+        background-color: rgb(34, 34, 34);
+        background-image: url(../imagenes/beathunterz/beathunterzbluesmall.png);
+    }60%{
+        background-color: rgb(9, 97, 148);
+    }80%{
+        background-image: url(../imagenes/beathunterz/beathunterzwhitesmall.png);
+        background-color: rgb(34, 34, 34);
+    }
+}
+
+
+#menu article:nth-of-type(2)>div{
+    background-image: url(../imagenes/cipo/logocipoblanco.png);
+    background-size: 50%;
+    background-color: rgb(182, 207, 0);
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation-name: cipogreen;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    transition: all 2s;
+}
+
+@keyframes cipogreen{
+    0%{
+    
+    }50%{
+        background-image: url(../imagenes/cipo/logocipo.png);
+        background-color: white;
+    }
+}
+
+#menu article:nth-of-type(1)>div{
+    background-image: url(../imagenes/DAU/dauchibiweb.png);
+    background-color: #009CDD;
+    background-size: cover;
+    animation-name: chibi;
+    animation-duration: 10s;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-iteration-count: infinite;
+    transition: all 2s;
+}
+
+@keyframes chibi{
+    0%{
+    
+    }33%{
+        background-color: #C00076;
+    }66%{
+        background-color: #FFEB00;
+    }99%{
+        
+    }
+}
+
+#menu article:nth-of-type(3)>div{
+    background-image: url(../imagenes/lettering/letteringsandra.png);
+    background-color: #231F20;
+    background-size: cover;
+    animation-name: letteringsandra;
+    animation-duration: 10s;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-iteration-count: infinite;
+    transition: all 2s;
+}
+
+@keyframes letteringsandra{
+    0%{
+    
+    }50%{
+        background-color: rgb(49, 31, 41);
+    }
+}
+
+
+#menu article:nth-of-type(4)>div{   
+    background-image: url(../imagenes/festaMajor/redondafuegosartificialespekeunido-02.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgb(41, 38, 91);
+    background-size: 80%;
+    animation-name: rotacionFiesta;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    transition: background-size 2s;
+}
+
+#menu article:nth-of-type(4){
+    background-color: rgb(41, 38, 91);
+    transition: all 2s;
+}
+
+#menu article:nth-of-type(5){
+    background-image: url(../imagenes/G18/BUSTO_v1.png);
+    background-color: rgb(0,200,212);
+    background-size: cover;
+    background-position: center;
+}
+
+#menu article:nth-of-type(5)>div{
+    background-image: url(../imagenes/G18/G18.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center right;
+    transition: background-size 2s;
+}
+
+#menu article:nth-of-type(6)>div{    
+    background-image: url(../imagenes/lettering/hayabusa.png);
+    background-size: 80%;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation-name: hayabusa2;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    transition: all 2s;
+}
+
+@keyframes hayabusa2{
+    50%{
+        background-image: url(../imagenes/lettering/hayabusa/darlinglogo.png);
+    }
+}
+
+
+#menu article:nth-of-type(8){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #009CDD;
+    font-family: 'Lato';
+    font-size: 200%;
+    color: white;
+}
+
+
+#menu article:nth-of-type(8) p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+#menu>article:hover div{
+    background-size: 110%;
+}
+
+
+
+
+
+
+/******Secciones********/
+/***********************/
+/************************/
+
+
+
+
+
+.container>section:nth-of-type(1){
+    height: 100vh;
+    width: 100%;
+    background-color: #009CDD;
+    background-image: url(../imagenes/fondohero.png);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+}
+
+
+.container>section:nth-of-type(2){
+    width: 100%;
+    background-image: url(../imagenes/DAU/dauchibiweb.png);
+    background-color: #009CDD;
+    background-size: cover;
+    animation-name: chibi;
+    animation-duration: 10s;
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-iteration-count: infinite;
+}
+.container>section:nth-of-type(3){
+    width: 100%;
+    background-image: url(../imagenes/cipo/logocipoblanco.png);
+    background-size: 30%;
+    background-color: rgb(182, 207, 0);
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation-name: cipogreen;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+.container>section:nth-of-type(4){
+    width: 100%;
+    background-image: url(../imagenes/lettering/letteringsandra.png);
+    background-color: #231F20;
+    background-size: cover;
+    animation-name: letteringsandra;
+    animation-duration: 10s;
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-iteration-count: infinite;
+}
+.container>section:nth-of-type(5){
+    width: 100%;
+    position: relative;
+    background-color: rgb(41, 38, 91);
+}
+
+.container>section:nth-of-type(5)>div{
+    overflow: visible;
+    position: absolute;
+    left: calc(90% - 400vh); /*en vertical 95% 300vh*/
+    top: calc(100% - 200vh);
+    height: 400vh;
+    width: 400vh;
+    background-image: url(../imagenes/festaMajor/redondafuegosartificialespekeunido-02.png);
+    background-position: center center;
+    background-color: rgb(41, 38, 91);
+    background-size: 100%;
+    animation-name: rotacionFiesta;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+@keyframes rotacionFiesta{
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+.container>section:nth-of-type(6){
+    width: 100%;
+    background-image: url(../imagenes/beathunterz/beathunterzwhitesmall.png);
+    background-size: 30%;
+    background-color: rgb(9, 97, 148);
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation-name: beathunter;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+.container>section:nth-of-type(7){
+    width: 100%;
+    background-image: url(../imagenes/lettering/hayabusa.png);
+    background-size: 50%;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation-name: hayabusa;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+}
+
+@keyframes hayabusa{
+    0%{
+        background-image: url(../imagenes/lettering/hayabusa/darlinglogo.png);
+        background-size: 60%;
+    }
+    40%{
+        background-image: url(../imagenes/lettering/hayabusa.png);
+        background-size: 50%;
+    }80%{
+        background-image: url(../imagenes/lettering/MOCKUP.jpg);
+        background-size: cover;
+    }
+}
+
+.container>section:nth-of-type(8){
+    width: 100%;
+    background-image: url(../imagenes/beathunterz/beathunterzwhitesmall.png);
+    background-size: 30%;
+    background-color: rgb(9, 97, 148);
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation-name: beathunter;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-delay: 12s;
+}
+.container>section:nth-of-type(9){
+    width: 100%;
+    background-image: url(../imagenes/beathunterz/beathunterzwhitesmall.png);
+    background-size: 30%;
+    background-color: rgb(9, 97, 148);
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation-name: beathunter;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-delay: 15s;
+}
+
+.container{
+    height: 0vh;
+    width: 0%;
+    overflow: hidden;
+}
+
+section{
+    height: 100vh;
+    overflow: hidden;
+    transition: height 0.25s;
+}
+
+/***************************************************/
+/***************************************************/
+/************CONTACT ABOUT ME*************************/
+/******************************************************/
+/******************************************************/
+
+#contact{
+    height: 0vh;
+    width: 0%;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2000;
+    background-color: white;
+    transition: height 1s;
+}
+
+#contact div:nth-of-type(1){
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+#contact div:nth-of-type(1):hover>div>hr{
+    background-color: black;
+}
+
+#contact div:nth-of-type(1)>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact div:nth-of-type(1) hr{
+    height: 5px;
+    width: 100%;
+    background-color: #009CDD;
+    border: none;
+    position: absolute;
+    transition: all 2s;
+}
+
+#contact div:nth-of-type(1) hr:nth-of-type(1){
+    transform: rotate(45deg);
+}
+
+#contact div:nth-of-type(1) hr:nth-of-type(2){
+    transform: rotate(-45deg);
+}
+
+#aboutme{
+    height: 0;
+    width: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2000;
+    background-color: white;
+    transition: height 1s;
+}
+
+#aboutme div:nth-of-type(1){
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+#aboutme div:nth-of-type(1):hover>div>hr{
+    background-color: black;
+}
+
+#aboutme div:nth-of-type(1)>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutme div:nth-of-type(1) hr{
+    height: 5px;
+    width: 100%;
+    background-color: #009CDD;
+    border: none;
+    position: absolute;
+    transition: all 2s;
+}
+
+#aboutme div:nth-of-type(1) hr:nth-of-type(1){
+    transform: rotate(45deg);
+}
+
+#aboutme div:nth-of-type(1) hr:nth-of-type(2){
+    transform: rotate(-45deg);
+}
